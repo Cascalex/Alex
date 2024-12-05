@@ -1,4 +1,5 @@
 Ejercicio 1: ¿Para qué sirve el siguiente programa?¿Qué pasa si el valor es 3?
+
 import random
 valor = random.randint(1, 3)
 if valor == 1:
@@ -7,3 +8,87 @@ elif valor == 2:
 print("2")
 else:
 print("X")
+
+#Este codigo sirve para, de manera aleatoria, generar un numero y representarlo en pantalla, los numeros pueden ser 1,2 o 3 (este ultimo representado con una X).
+
+Ejercicio 2: ¿Para qué sirve el siguiente programa?¿Qué pasa si el valor es 3?
+
+let valor = 0
+valor = Math.randomRange(1, 3)
+if (valor == 1) {
+
+basic.showLeds(`
+. . # . .
+. . # . .
+. . # . .
+. . # . .
+. . # . .
+`)
+
+}
+else if (valor == 2) {
+basic.showLeds(`
+# . . . #
+. # . # .
+. . # . .
+. # . # .
+# . . . #
+`)
+
+}
+else {
+
+basic.showLeds(`
+# # # # #
+. . . . #
+# # # # #
+# . . . .
+# # # # #
+`)
+}
+
+#Este codigo sirve exactamente para lo mismo que el anterior pero representando los numeros en una pantalla con leds.
+
+Ejercicio 1: Contador de pasos básico
+
+def on_button_pressed_a():
+    basic.show_number(Pasos)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_gesture_shake():
+    global Pasos
+    Pasos += 1
+input.on_gesture(Gesture.SHAKE, on_gesture_shake)
+
+def on_button_pressed_b():
+    global Pasos
+    Pasos = 0
+input.on_button_pressed(Button.B, on_button_pressed_b)
+
+Pasos = 0
+Pasos = 0
+
+def on_forever():
+    pass
+basic.forever(on_forever)
+
+Ejercicio 2: : Generador de resultados para una quiniela
+
+from microbit import *
+import random
+while True:
+    # Mostrar un resultado aleatorio al presionar A
+    if button_a.is_pressed():
+        resultado = random.choice([&quot;1&quot;, &quot;X&quot;, &quot;2&quot;])
+        display.show(resultado)
+   
+    # Limpiar la pantalla al presionar B
+    if button_b.is_pressed():
+        display.clear()
+
+Ejercicio 3: Máquina del amor - Medidor de compatibilidad amorosa
+
+def on_button_pressed_ab():
+    basic.show_number(randint(0, 100))
+input.on_button_pressed(Button.AB, on_button_pressed_ab)
+basic.show_string("AMOR")
